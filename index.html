@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen Web - Relanzamiento de Producto</title>
+    <!-- Vinculación del CSS Externo -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <!-- CABECERA Y NAVEGACIÓN SEMÁNTICA -->
+    <header class="header-principal">
+        <nav aria-label="Navegación principal" class="nav-principal">
+            <div class="logo">NextGen Web</div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#precios">Catálogo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+        <!-- Sección Hero con Animación Keyframes -->
+        <section id="inicio" class="hero">
+            <h1 class="animacion-entrada">Revoluciona tu Presencia Digital</h1>
+            <p>Impulsa tu emprendimiento con soluciones web modernas, rápidas y adaptables.</p>
+            <a href="#servicios" class="btn-principal">Descubre más</a>
+        </section>
+
+        <!-- Sección de Servicios osea las cajas donde se muestra  nuestra chamba (Uso de Article y Flexbox) -->
+        <section id="servicios" class="seccion-servicios">
+            <h2>Nuestros Servicios</h2>
+            <div class="contenedor-servicios">
+                <article class="tarjeta">
+                    <h3>Diseño Responsivo</h3>
+                    <p>Tu sitio se verá increíble en celulares, tablets y computadoras de escritorio.</p>
+                </article>
+                <article class="tarjeta">
+                    <h3>HTML5 & CSS3</h3>
+                    <p>Código limpio y semántico para mejorar tu accesibilidad y posicionamiento SEO básico.</p>
+                </article>
+                <article class="tarjeta">
+                    <h3>Interactividad</h3>
+                    <p>Animaciones y transiciones fluidas que mejoran la experiencia del usuario.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Sección de Tabla Semántica y Accesible -->
+        <section id="precios" class="seccion-tabla">
+            <h2>Catálogo de Planes</h2>
+            <div class="contenedor-tabla">
+                <table>
+                    <caption>Planes de desarrollo web 2026</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Plan</th>
+                            <th scope="col">Características</th>
+                            <th scope="col">Precio (S/)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row"><strong>Emprendedor</strong></td>
+                            <td>Landing Page, Formulario, Responsive</td>
+                            <td>S/ 450</td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><strong>Pyme</strong></td>
+                            <td>Multisección, Animaciones, SEO Básico</td>
+                            <td>S/ 850</td>
+                        </tr>
+                        <tr>
+                            <td scope="row"><strong>Corporativo</strong></td>
+                            <td>Sitio Completo, Base de Datos, E-commerce</td>
+                            <td>S/ 1,500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Sección de Formulario Accesible -->
+        <section id="contacto" class="seccion-contacto">
+            <h2>Contáctanos</h2>
+            <form action="#" method="post" class="formulario">
+                <div class="campo">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana Pérez" required>
+                </div>
+                
+                <div class="campo">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" placeholder="ana@ejemplo.com" required>
+                </div>
+                
+                <div class="campo">
+                    <label for="asunto">Servicio de interés:</label>
+                    <select id="asunto" name="asunto" required>
+                        <option value="">Selecciona un plan...</option>
+                        <option value="emprendedor">Plan Emprendedor</option>
+                        <option value="pyme">Plan Pyme</option>
+                        <option value="corporativo">Plan Corporativo</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-enviar">Enviar Solicitud</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="footer-principal">
+        <p>&copy; 2026 NextGen Web. Todos los derechos reservados.</p>
+        <p>Desarrollado para el proyecto de Fundamentos Front-End.</p>
+    </footer>
+
+</body>
+</html>                       

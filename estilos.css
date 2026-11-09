@@ -1,0 +1,284 @@
+/* ========================================================
+   VARIABLES Y RESET BÁSICO (Modelo de Caja)
+   ======================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Fundamental para evitar desbordes en el modelo de caja */
+}
+
+:root {
+    --color-primario: #1e3a8a;
+    --color-secundario: #3b82f6;
+    --color-fondo: #f8fafc;
+    --color-texto: #333333;
+    --color-blanco: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px; /* Base para uso de unidades relativas REM */
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* ========================================================
+   NAVEGACIÓN (Flexbox)
+   ======================================================== */
+.header-principal {
+    background-color: var(--color-primario);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.nav-principal .logo {
+    color: var(--color-blanco);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.nav-principal ul {
+    list-style: none; /* Quitamos las viñetas de la lista desordenada */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nav-principal a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-principal a:hover {
+    color: #93c5fd;
+}
+
+/* ========================================================
+   SECCIÓN HERO (Viewport Units + Animaciones Complejas)
+   ======================================================== */
+.hero {
+    background: linear-gradient(135deg, var(--color-primario), var(--color-secundario));
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 4rem 2rem;
+    min-height: 60vh; /* Uso de unidad vh para cubrir gran parte de la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Botones con Transiciones (Efectos hover) */
+.btn-principal, .btn-enviar {
+    background-color: var(--color-blanco);
+    color: var(--color-primario);
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición fluida */
+}
+
+.btn-principal:hover, .btn-enviar:hover {
+    transform: translateY(-5px); /* Transformación 2D al pasar el cursor */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Keyframes: Animación de entrada */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animacion-entrada {
+    animation-name: fadeInUp;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+/* ========================================================
+   SERVICIOS (Mobile First)
+   ======================================================== */
+.seccion-servicios {
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.seccion-servicios h2, .seccion-tabla h2, .seccion-contacto h2 {
+    color: var(--color-primario);
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.contenedor-servicios {
+    display: flex;
+    flex-direction: column; /* Apilado en móviles por defecto */
+    gap: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tarjeta {
+    background-color: var(--color-blanco);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: scale(1.05); /* Escala 2D para microinteracción */
+}
+
+.tarjeta h3 {
+    color: var(--color-secundario);
+    margin-bottom: 1rem;
+}
+
+/* ========================================================
+   TABLAS Y FORMULARIOS (Accesibilidad y diseño fluido)
+   ======================================================== */
+.seccion-tabla, .seccion-contacto {
+    padding: 3rem 1rem;
+    background-color: var(--color-blanco);
+    text-align: center;
+}
+
+.seccion-contacto {
+    background-color: var(--color-fondo);
+}
+
+.contenedor-tabla {
+    overflow-x: auto; /* Permite scroll horizontal en móviles si la tabla es grande */
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table caption {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--color-primario);
+}
+
+th, td {
+    padding: 1rem;
+    border: 1px solid #cbd5e1;
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+.formulario {
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--color-blanco);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.campo {
+    margin-bottom: 1.5rem;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.campo input, .campo select, .campo textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+/* ========================================================
+   PIE DE PÁGINA
+   ======================================================== */
+.footer-principal {
+    background-color: var(--color-texto);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 2rem;
+}
+
+/* ========================================================
+   MEDIA QUERIES (Punto de quiebre para Tablets/Desktop)
+   ======================================================== */
+@media (min-width: 768px) {
+    /* El menú pasa a ser horizontal y se separa a los extremos */
+    .nav-principal {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 5rem;
+    }
+
+    /* Las tarjetas de servicio se distribuyen en columnas (Layout elástico) */
+    .contenedor-servicios {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .tarjeta {
+        flex: 1; /* Ocupan el mismo ancho disponible en pantalla */
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+}
